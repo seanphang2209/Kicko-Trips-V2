@@ -1,0 +1,31 @@
+# Commands to push Kicko Trips to GitHub
+
+# 1. First, create a new repository on GitHub.com with the name "kicko-trips"
+
+# 2. Then run these commands in your terminal:
+
+# Remove any git locks (if they exist)
+rm -f .git/index.lock .git/config.lock
+
+# Add all files to git
+git add .
+
+# Commit with a descriptive message
+git commit -m "Complete Kicko Trips AI travel planner
+
+- Full-stack React + Express application
+- AI-powered itinerary generation
+- Support for multiple destinations (Bali, Tokyo, Paris, Bangkok)
+- Beautiful UI with trip planning form and itinerary display
+- Complete API with sample data and mock AI logic
+- Ready for production deployment"
+
+# Add your GitHub repository as remote (replace YOUR_USERNAME)
+git remote add origin https://github.com/YOUR_USERNAME/kicko-trips.git
+
+# Push to GitHub
+git push -u origin main
+
+# Alternative if you get errors about main branch:
+# git branch -M main
+# git push -u origin main

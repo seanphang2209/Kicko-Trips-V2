@@ -1,0 +1,155 @@
+Replit Prompt: Backend for Kicko Trips (AI-Powered Travel Itinerary Planner)
+txt
+Copy
+Edit
+I want to build a full backend API service for my AI travel assistant app called “Kicko Trips”.
+
+The backend should be built using:
+- Node.js
+- Express.js
+- JavaScript (ES6+)
+- Modular folder structure
+- Support for REST API endpoints
+- Sample (mocked) data for destinations, activities, restaurants
+- Future-proofed for external API integrations (OpenAI, weather, maps)
+
+---
+
+✅ Features to include:
+
+1. **API Endpoints**
+   - `POST /generate-itinerary`: Accepts user input and returns a personalized itinerary
+   - `GET /dropdowns`: Returns metadata for dynamic dropdowns (destinations, trip types, dietary needs, etc.)
+
+2. **Smart AI Logic (Mocked)**
+   - Parse user input: destination, dates, trip type, pace, preferences
+   - Simulate day-by-day itinerary generation
+   - Randomly assign weather
+   - Match appropriate activities, meals, experiences
+   - Include a reasoning/explanation for each suggestion
+   - Attach optional action links (book, reserve)
+
+3. **Folder Structure**
+/kicko-backend
+/routes
+itinerary.js
+dropdowns.js
+/controllers
+generateItinerary.js
+getDropdowns.js
+/utils
+aiLogic.js
+weatherSimulator.js
+sampleData.js
+app.js
+package.json
+.env (support for API keys later)
+
+pgsql
+Copy
+Edit
+
+4. **Middleware & Configs**
+- Enable CORS for frontend connection
+- Support JSON request body parsing (`express.json()`)
+- Add dummy environment variable support with `dotenv`
+
+5. **Run instructions**
+- Add `"start": "node app.js"` to `package.json` scripts
+- Console log when server starts (e.g. "Kicko backend running on http://localhost:3000")
+
+---
+
+📥 Example Input to `/generate-itinerary`
+
+```json
+{
+"destination": "Bali, Indonesia",
+"startDate": "2025-07-10",
+"endDate": "2025-07-14",
+"tripType": ["Relaxation", "Foodie"],
+"pace": "Easy",
+"budget": "Medium",
+"groupType": "Couple",
+"dietaryRestrictions": ["Halal"],
+"mustSee": ["Uluwatu Temple"],
+"avoid": ["Nightclubs"]
+}
+📤 Example Output:
+
+json
+Copy
+Edit
+{
+  "tripSummary": {
+    "destination": "Bali",
+    "days": 4,
+    "weather": "30°C, humid with light showers",
+    "style": "Relaxation + Foodie"
+  },
+  "itinerary": [
+    {
+      "day": "Day 1",
+      "summary": "Beach intro and halal-friendly dinner",
+      "activities": [
+        {
+          "time": "2:00 PM",
+          "title": "Check-in at Canggu Villa",
+          "reason": "Quiet retreat ideal for couples and relaxation."
+        },
+        {
+          "time": "4:00 PM",
+          "title": "Sunset at Uluwatu Temple",
+          "reason": "One of your must-see picks; sunset is the best time.",
+          "action": {
+            "label": "Book sunset tour",
+            "url": "https://klook.com/search/Uluwatu%20sunset"
+          }
+        },
+        {
+          "time": "7:00 PM",
+          "title": "Dinner at halal warung",
+          "reason": "Top-rated halal-friendly seafood spot in Jimbaran.",
+          "action": {
+            "label": "Reserve on Google Maps",
+            "url": "https://maps.google.com/..."
+          }
+        }
+      ]
+    }
+  ]
+}
+✨ Notes:
+
+Use sampleData.js to store dummy activities for multiple cities (e.g. Bali, Tokyo, Paris, Bangkok)
+
+Use weatherSimulator.js to generate mock weather data
+
+Future plan: connect OpenAI API for AI-generated reasoning
+
+Make this backend work with the frontend UI I built in V0 (React)
+
+yaml
+Copy
+Edit
+
+---
+
+## ✅ After Running This Prompt in Replit
+
+You’ll have:
+
+- A working backend server
+- Two useful endpoints: `/generate-itinerary` and `/dropdowns`
+- Dynamic support for multiple destinations
+- Simulated smart logic for planning trips
+- Readiness to connect to your V0 frontend via GitHub and deploy to Cloudflare if needed
+
+---
+
+Would you like me to now:
+- Help you **write the first few actual files (`app.js`, `routes`, etc.)**?
+- Show you how to **connect this Replit project to V0’s frontend via GitHub**?
+- Guide you through **deployment to Cloudflare Workers or Pages**?
+
+Let me know what you'd like next!

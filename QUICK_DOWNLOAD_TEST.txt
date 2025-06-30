@@ -1,0 +1,5 @@
+This is a test file - try downloading this first!
+
+Right-click on this file in the Files panel and select "Download" to test the download process.
+
+If this works, you can download all your project files the same way.
